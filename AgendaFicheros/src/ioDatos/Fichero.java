@@ -50,4 +50,8 @@ public class Fichero {
        
         return vAgenda;
     }
+    
+    public static void guardarDatosDisco(ArrayList<Contacto> vAgenda){
+        
+    }
 }
