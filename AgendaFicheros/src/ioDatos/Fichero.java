@@ -38,8 +38,9 @@ public class Fichero {
             leer = new Scanner(fichero);
             while(leer.hasNext()){
             String dato = leer.nextLine();            
-            String aux[] = dato.split(dato);
+            String aux[] = dato.split("-");
             Contacto c = new Contacto(aux[0], aux[1]);
+            vAgenda.add(c);
             }
         
         } catch (FileNotFoundException ex) {

@@ -22,7 +22,7 @@ public class Agenda {
     public Agenda(String nombre) {
         this.propietario = nombre;
        // vAgenda = new Contacto[10];
-        vAgenda = new ArrayList();
+        vAgenda = ioDatos.Fichero.cargarDatos();
     }
     
     public void añadirContacto(Contacto contacto){
