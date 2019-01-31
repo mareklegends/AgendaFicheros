@@ -87,5 +87,11 @@ public class Agenda {
                }
         }
     }
+
+    public ArrayList<Contacto> getvAgenda() {
+        return vAgenda;
+    }
+    
+
     
 }
