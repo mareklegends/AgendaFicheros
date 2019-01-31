@@ -14,6 +14,8 @@ public class Contacto {
     private String telefono;
 
     public Contacto() {
+        this.nombre="";
+        this.telefono="";
     }
 
     public Contacto(String nombre, String telefono) {

@@ -5,6 +5,9 @@
  */
 package agendaficheros;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Juanfran
@@ -12,8 +15,59 @@ package agendaficheros;
 public class Agenda {
     
     private String propietario;
-    private Contacto[] vAgenda;
+    //private Contacto[] vAgenda;
+    private ArrayList<Contacto> vAgenda;
+
+    public Agenda(String nombre) {
+        this.propietario = nombre;
+       // vAgenda = new Contacto[10];
+        vAgenda = new ArrayList();
+    }
+    
+    public void añadirContacto(Contacto contacto){
+        vAgenda.add(contacto);
+    }
+    
+    public void mostrarContacto (String nombre){
+        for (Contacto c: vAgenda){
+             if (nombre.equalsIgnoreCase(c.getNombre()))
+                 System.out.println(c);
+        }
+    }
     
     
+    public void mostrarTodo (){
+        for (Contacto c: vAgenda){
+            System.out.println(c);
+        }
+    }
+    
+    public void borrarContacto (String dato){
+        /*for (Contacto contacto : vAgenda) {
+            if (contacto.getNombre().equalsIgnoreCase(dato) || 
+                contacto.getTelefono().equalsIgnoreCase(dato)){
+                vAgenda.remove(contacto);
+                
+            }
+        }*/
+        for (int i = 0; i < vAgenda.size(); i++) {
+            if (vAgenda.get(i).getNombre().equalsIgnoreCase(dato) || 
+                vAgenda.get(i).getTelefono().equalsIgnoreCase(dato)){
+                vAgenda.remove(i);
+            }
+        }
+    }
+    
+    public void editarContacto (String dato){
+        for (int i = 0; i < vAgenda.size(); i++) {
+            if (vAgenda.get(i).getNombre().equalsIgnoreCase(dato) || 
+                vAgenda.get(i).getTelefono().equalsIgnoreCase(dato)){
+                Scanner leer = new Scanner(System.in); 
+                System.out.println("Dime el nuevo nombre y telefono");
+                vAgenda.get(i).setNombre(leer.nextLine());
+                vAgenda.get(i).setTelefono(leer.nextLine());
+            }
+        }
+    }
     
 }
