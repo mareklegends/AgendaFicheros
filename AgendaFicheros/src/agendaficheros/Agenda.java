@@ -6,6 +6,7 @@
 package agendaficheros;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -43,17 +44,20 @@ public class Agenda {
     }
     
     public void borrarContacto (String dato){
-        /*for (Contacto contacto : vAgenda) {
-            if (contacto.getNombre().equalsIgnoreCase(dato) || 
-                contacto.getTelefono().equalsIgnoreCase(dato)){
-                vAgenda.remove(contacto);
-                
-            }
-        }*/
+        /*
         for (int i = 0; i < vAgenda.size(); i++) {
             if (vAgenda.get(i).getNombre().equalsIgnoreCase(dato) || 
                 vAgenda.get(i).getTelefono().equalsIgnoreCase(dato)){
                 vAgenda.remove(i);
+            }
+        }
+        */
+        Iterator<Contacto> it = vAgenda.iterator();
+        while(it.hasNext()){
+            Contacto c = it.next();
+               if (c.getNombre().equalsIgnoreCase(dato) || 
+                c.getTelefono().equalsIgnoreCase(dato)){
+                it.remove();
             }
         }
     }
