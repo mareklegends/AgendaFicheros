@@ -63,6 +63,7 @@ public class Agenda {
     }
     
     public void editarContacto (String dato){
+        /*
         for (int i = 0; i < vAgenda.size(); i++) {
             if (vAgenda.get(i).getNombre().equalsIgnoreCase(dato) || 
                 vAgenda.get(i).getTelefono().equalsIgnoreCase(dato)){
@@ -71,6 +72,19 @@ public class Agenda {
                 vAgenda.get(i).setNombre(leer.nextLine());
                 vAgenda.get(i).setTelefono(leer.nextLine());
             }
+        }
+        */
+          Iterator<Contacto> it = vAgenda.iterator();
+            while(it.hasNext()){
+            Contacto c = it.next();
+               if (c.getNombre().equalsIgnoreCase(dato) || 
+                c.getTelefono().equalsIgnoreCase(dato)){
+                Scanner leer = new Scanner(System.in);
+                   System.out.println("Dime el nuvo nombre y el nuevo telefono");
+            c.setNombre(leer.nextLine());
+            c.setTelefono(leer.nextLine());
+               
+               }
         }
     }
     
