@@ -55,6 +55,10 @@ public class Contacto {
     public String toString() {
         return nombre + " --- " + telefono;
     }
+
+    public String escribir() {
+        return nombre+"-"+telefono;
+    }
     
     
 }
